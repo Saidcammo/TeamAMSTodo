@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>todos</h1>
+        <form id="input-form">
+
+            <div class="label-container">
+            <label id="toggle-all">🔽</label>
+            </div>
+
+            <div class="input-container">
+            <input type="text" name="input" id="text-input" placeholder="What needs to be done? ">
+            </div>
+
+        </form>
+    </header>
+
+    <main>
+        <ul id="list">
+
+        </ul>
+    </main>
+
+        <section id="action-container">
+
+            <div class="items-container">
+                 <p class="items"><span id="number-of-items"></span> items left</p>
+            </div>
+
+            <div class="button-container">
+                <button class="all-button">All</button>
+                <button class="active-button">Active</button>
+                <button class="completed-button">Completed</button>
+            </div>
+
+            <div class="clear-container">
+            <button class="clear-completed">Clear Completed</button>
+            </div>
+
+        </section>
+
+        <footer>
+        <p>Double-click to edit a todo </p>
+        <p>Written by Mustafa Ucler, Abdulrahman Ambdi and Said Abdiqadir Ahmed</p>
+        <p>Part of TodoMVC</p>
+        </footer>
+    
+</body>
+
+</html>
