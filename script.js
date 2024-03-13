@@ -33,7 +33,23 @@ function countRemainingTasks() {
     }
 }
 
-// Enter key event listener to add tasks
+
+document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.querySelectorAll("#action-container button");
+
+    buttons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        
+        buttons.forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+        
+        this.classList.add("active");
+      });
+    });
+});
+
+
 input.onkeydown = function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
@@ -138,6 +154,7 @@ function toggleAll() {
 document.addEventListener('dblclick', function(event) {
     const target = event.target;
     if (target.tagName === 'LABEL') {
+        const listItem = target.closest('li'); 
         const input = document.createElement('input');
         input.type = 'text';
         input.value = target.textContent;
@@ -146,22 +163,26 @@ document.addEventListener('dblclick', function(event) {
         input.style.fontSize = window.getComputedStyle(target).fontSize;
         input.style.width = window.getComputedStyle(target).width;
         input.style.height = window.getComputedStyle(target).height;
+        listItem.style.border = '2px solid red'; 
         input.style.background = 'transparent';
         target.replaceWith(input);
         input.focus();
 
         input.addEventListener('blur', function() {
             saveChanges(input);
+            listItem.style.border = 'none'; 
         });
 
         input.addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
                 saveChanges(input);
+                listItem.style.border = 'none'; 
             }
         });
 
         input.addEventListener('focus', function() {
             input.classList.remove('edit-mode');
+            input.style.border = '2px solid red'; 
         });
     }
 });
@@ -178,3 +199,5 @@ function saveChanges(input) {
         input.remove();
     }
 }
+
+

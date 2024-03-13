@@ -5,12 +5,15 @@
 }
 
 h1 {
+    top: -140px;
     text-align: center;
-    color: rgb(233, 226, 226);
+    color: #b83f45;;
     width: 100%;
-    font-size:70px;
-    font-weight: 100;
+    font-size:80px;
+    font-weight: 200;
     padding-top: 5%;
+    margin: 66,4px 0px;
+
 }
 
 #toggle-all{
@@ -22,6 +25,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    line-height: 1,5em;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(43,54,130,1) 35%);
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -30,29 +34,35 @@ body{
 #input-form{
     display: grid;
     grid-template:
-       'a b' 100%/ 10% 90%;
+       'a b';
+       margin-top: 10px;
+       padding-left: 10px;
     background-color: white;
-    height: 50px;
-    width: 400px;
 }
 
 #input-form:focus-within {
-    box-shadow: 0 0 3px 3px #ffffff;
+    box-shadow: 0 0 2px 2px red;
     outline: 0;
 }
 
 .input-container input{
-    font-size: 20px;
+    font-size: 25px;
     font-style: italic;
-    color: black;
-    width: 100%;
-    height: 100%;
+    padding: 10px 10px 10px 60px;
+    color: rgb(0, 0, 0);
+    height: 70px;
+    width: 514px;
     border: none;   
 }
 
 .label-container label {
     font-size: 20px;
 }
+
+label#toggle-all{
+    padding-left: 0px;
+}
+
 
 .label-container {
     margin: auto;
@@ -67,25 +77,25 @@ input{
     display: grid;
     grid-template:
        'a b c' 100%/ 10% 80% 10%;
-    background-color: white;
-    min-height: 30px;
-    padding: 6px;
-    width: 400px;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    margin-top: 1px;
+    font-size: 30px;
+    width: 552px;
     border-top: 1px solid #dfdfdf;
     list-style-type: none;  
 }
-
 #list input,
 #list label {
-    font-size: 20px;
+    font-size: 30px;
     word-wrap: break-word;
+    margin-right: 30px;
 }
 
 #list text-form :focus {
-    box-shadow: 0 0 2px 2px #3519b3;
+    box-shadow: 0 0 2px 2px solid red;
     outline: 0;
 }
-
 li:hover .delete-mark{
     display: grid;
 }
@@ -98,6 +108,7 @@ li:hover .delete-mark{
 
 li .delete-mark::before {
     content: '❌';
+    margin: auto;
 }
 
 .checkbox:checked+label {
@@ -108,10 +119,12 @@ li .delete-mark::before {
     display: none;
     grid-template:
         'a b c' ;
-    width: 400px;
-    background-color: white;
+    width: 552px;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
     border-top: 1px solid #dfdfdf;
     text-align: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 
 .clear-container,
@@ -125,18 +138,24 @@ li .delete-mark::before {
 }
 
 #action-container button {
+    border: 2px solid transparent; 
     background-color: white;
-    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
 }
 
   #action-container button:hover {
-    box-shadow: 0 0 2px 2px #030853;
+    box-shadow: 0 0 2px 2px #ffffff;
     outline: 0;
 }
 
+#action-container button.active {
+    border-color: red;
+}
+
 footer{
-    width: 400px;
-    font-size: 10px;
+    font-size: 15px;
     text-align: center;
     color: gray;
     margin-top: 4%;
